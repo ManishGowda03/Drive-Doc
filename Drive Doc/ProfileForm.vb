@@ -50,7 +50,7 @@ Public Class ProfileForm
 
     Private Sub LoadUsersForAdmin()
         Try
-            Using con As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using con As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
                 Dim query As String = "SELECT UserID, Username, Email, PhoneNo FROM Users"
                 Using cmd As New SqlCommand(query, con)
                     Dim adapter As New SqlDataAdapter(cmd)
@@ -73,7 +73,7 @@ Public Class ProfileForm
     Private Sub LoadUserProfile(userID As Integer)
         Try
             Dim query As String = "SELECT UserID, Username, Email, FullName, PhoneNo FROM Users WHERE UserID = @UserID"
-            Using con As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using con As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
                 Using cmd As New SqlCommand(query, con)
                     cmd.Parameters.AddWithValue("@UserID", userID)
                     con.Open()
@@ -107,7 +107,7 @@ Public Class ProfileForm
 
         Try
             Dim query As String = "UPDATE Users SET Email = @Email, FullName = @FullName, PhoneNo = @PhoneNo WHERE UserID = @UserID"
-            Using con As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using con As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
                 Using cmd As New SqlCommand(query, con)
                     cmd.Parameters.AddWithValue("@Email", TextBox3.Text)
                     cmd.Parameters.AddWithValue("@FullName", TextBox4.Text)

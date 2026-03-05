@@ -101,7 +101,7 @@ Public Class RegisterForm
             Return
         End If
 
-        Dim con As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+        Dim con As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
 
         Dim checkCmd As New SqlCommand("SELECT COUNT(*) FROM Users WHERE Username=@Username OR Email=@Email", con)
         checkCmd.Parameters.AddWithValue("@Username", TextBox1.Text)

@@ -57,7 +57,7 @@ Public Class LoginForm
         End If
 
         Try
-            Using con As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using con As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
                 Dim query As String
 
                 If IsEmail(TextBox1.Text) Then
