@@ -13,7 +13,7 @@ Public Class Dashboard
     Dim selectedColor As String = ""
     Public isRedirectedFromInventory As Boolean = False
     Public serviceID As Integer = 0
-    Dim connString As String = "Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True"
+    Dim connString As String = "Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True"
     Dim conn As New SqlConnection(connString)
     Public PaymentPending As Boolean = False
     Public RedirectedToBilling As Boolean = False
@@ -355,7 +355,7 @@ Public Class Dashboard
         End If
         Try
             Dim query As String = "INSERT INTO CarInventory (CarName, Model, Year, Stock, Colors, Price, ImagePath) VALUES (@CarName, @Model, @Year, @Stock, @Colors, @Price, @ImagePath)"
-            Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
 
                 Using cmd As New SqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@CarName", TextBox21.Text)
@@ -479,7 +479,7 @@ Public Class Dashboard
         Dim row As DataGridViewRow = DataGridView4.SelectedRows(0)
         Dim id As Integer = Convert.ToInt32(row.Cells("CarID").Value)
         Dim query As String = "UPDATE CarInventory SET CarName=@CarName, Model=@Model, Year=@Year, Stock=@Stock, Colors=@Colors, Price=@Price, ImagePath=@ImagePath WHERE CarID=@CarID"
-        Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+        Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
 
             Using cmd As New SqlCommand(query, conn)
                 cmd.Parameters.AddWithValue("@CarID", id)
@@ -509,7 +509,7 @@ Public Class Dashboard
             Dim row As DataGridViewRow = DataGridView4.SelectedRows(0)
             Dim id As Integer = Convert.ToInt32(row.Cells("CarID").Value)
             Dim query As String = "DELETE FROM CarInventory WHERE CarID=@CarID"
-            Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
 
                 Using cmd As New SqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@CarID", id)
@@ -1088,7 +1088,7 @@ Public Class Dashboard
         Dim testDriveDate As Date = DateTimePicker3.Value.Date
         Dim carID As Integer
         Dim query = "SELECT TOP 1 CarID FROM CarInventory WHERE CarName=@name AND Model=@model AND Year=@year"
-        Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+        Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
 
             Using cmd As New SqlCommand(query, conn)
                 cmd.Parameters.AddWithValue("@name", carName)
@@ -1238,7 +1238,7 @@ Public Class Dashboard
 
         Try
             Dim query As String = "UPDATE Booking SET Status = @status WHERE BookingID = @bookingID"
-            Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
 
                 Using cmd As New SqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@status", newStatus)
@@ -1273,7 +1273,7 @@ Public Class Dashboard
 
         Try
             Dim deleteQuery As String = "DELETE FROM Booking WHERE BookingID = @BookingID"
-            Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
 
                 Using cmd As New SqlCommand(deleteQuery, conn)
                     Dim bookingID As Integer
@@ -1352,7 +1352,7 @@ Public Class Dashboard
             query = "SELECT * FROM Service WHERE UserID = @UserID"
         End If
 
-        Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True"),
+        Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True"),
           cmd As New SqlCommand(query, conn),
           adapter As New SqlDataAdapter(cmd)
 
@@ -1420,7 +1420,7 @@ Public Class Dashboard
         Dim query As String = "INSERT INTO Service (UserID, CarName, Model, Year, ServiceType, ServiceAmount, ServiceDate, Status) OUTPUT INSERTED.ServiceID 
                                VALUES (@UserID, @CarName, @Model, @Year, @ServiceType, @ServiceAmount, @ServiceDate, 'Pending')"
 
-        Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True"),
+        Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True"),
               cmd As New SqlCommand(query, conn)
 
             cmd.Parameters.AddWithValue("@UserID", userId)
@@ -1536,7 +1536,7 @@ Public Class Dashboard
         Dim serviceId As String = TextBox5.Text
         Dim newStatus As String = ComboBox2.Text
         Dim serviceDate As Date
-        Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+        Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
             Dim dateQuery As String = "SELECT ServiceDate FROM Service WHERE ServiceID = @ServiceID"
             Using cmd As New SqlCommand(dateQuery, conn)
                 cmd.Parameters.AddWithValue("@ServiceID", serviceId)
@@ -1557,7 +1557,7 @@ Public Class Dashboard
         End If
         Dim query As String = "UPDATE Service SET Status = @Status WHERE ServiceID = @ServiceID"
 
-        Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True"),
+        Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True"),
           cmd As New SqlCommand(query, conn)
 
             cmd.Parameters.AddWithValue("@ServiceID", serviceId)
@@ -1642,7 +1642,7 @@ Public Class Dashboard
             If invoiceType = "Purchase" Then
                 Dim insertSaleQuery As String = "INSERT INTO Sales (UserID, CarID, SaleDate, Amount) " &
                                             "VALUES (@UserID, @CarID, @SaleDate, @Amount); SELECT SCOPE_IDENTITY()"
-                Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+                Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
                     Using cmdSale As New SqlCommand(insertSaleQuery, conn)
                         cmdSale.Parameters.AddWithValue("@UserID", userID)
                         cmdSale.Parameters.AddWithValue("@CarID", carID)
@@ -1655,7 +1655,7 @@ Public Class Dashboard
                     End Using
                 End Using
             End If
-            Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
 
                 Dim updateStockQuery As String = "UPDATE CarInventory SET Stock = Stock - 1 WHERE CarID = @CarID"
                 Using cmdStock As New SqlCommand(updateStockQuery, conn)
@@ -1677,7 +1677,7 @@ Public Class Dashboard
             End If
             Dim insertBillingQuery As String = "INSERT INTO Billing (InvoiceDate, UserID, InvoiceType, ReferenceID, Amount, PaymentMethod) " &
                                                "VALUES (@InvoiceDate, @UserID, @InvoiceType, @ReferenceID, @Amount, @PaymentMethod) ; SELECT SCOPE_IDENTITY()"
-            Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
 
                 Using cmdBill As New SqlCommand(insertBillingQuery, conn)
                     cmdBill.Parameters.AddWithValue("@InvoiceDate", invoiceDate)
@@ -1698,7 +1698,7 @@ Public Class Dashboard
             Panel7.Visible = False
 
             Dim invoiceForm As New Invoice(Me)
-            Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
                 Dim query = "SELECT InvoiceID, InvoiceType, ReferenceID, InvoiceDate, PaymentMethod FROM Billing WHERE InvoiceID = @InvoiceID"
                 Using cmd As New SqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@InvoiceID", invoiceID)
@@ -1716,7 +1716,7 @@ Public Class Dashboard
             End Using
 
             invoiceForm.TextBox5.Text = LoggedInUserID.ToString()
-            Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+            Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
                 Dim userQuery As String = "SELECT FullName, Email, PhoneNo FROM Users WHERE UserID=@UserID"
                 Using userCmd As New SqlCommand(userQuery, conn)
                     userCmd.Parameters.AddWithValue("@UserID", LoggedInUserID)
@@ -1733,7 +1733,7 @@ Public Class Dashboard
 
             Dim carType = invoiceForm.TextBox2.Text
             If carType = "Purchase" Then
-                Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+                Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
                     Dim query = "SELECT C.CarName, C.Model, C.Year, C.Colors, C.Price FROM CarInventory C INNER JOIN Sales S ON C.CarID = S.CarID WHERE S.SaleID=@SaleID"
                     Using cmd As New SqlCommand(query, conn)
                         cmd.Parameters.AddWithValue("@SaleID", saleID)
@@ -1755,7 +1755,7 @@ Public Class Dashboard
                 invoiceForm.TextBox15.Visible = False
 
             ElseIf carType = "Service" Then
-                Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+                Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
                     Dim query = "SELECT CarName, Model, Year, ServiceDate, ServiceType, ServiceAmount FROM Service WHERE ServiceID=@ServiceID"
                     Using cmd As New SqlCommand(query, conn)
                         cmd.Parameters.AddWithValue("@ServiceID", serviceID)
@@ -1857,7 +1857,7 @@ Public Class Dashboard
             Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this invoice and its corresponding record?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
             If result = DialogResult.Yes Then
-                Using conn As New SqlConnection("Data Source=DESKTOP-P2N8NRQ;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
+                Using conn As New SqlConnection("Data Source=localhost;Initial Catalog=Car;Integrated Security=True;Trust Server Certificate=True")
                     conn.Open()
                     Using transaction As SqlTransaction = conn.BeginTransaction()
                         Try
