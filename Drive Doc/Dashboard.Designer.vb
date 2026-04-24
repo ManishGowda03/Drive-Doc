@@ -229,7 +229,7 @@ Partial Class Dashboard
         Button1.Font = New Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button1.Image = CType(resources.GetObject("Button1.Image"), Image)
         Button1.ImageAlign = ContentAlignment.MiddleLeft
-        Button1.Location = New Point(1652, 44)
+        Button1.Location = New Point(1690, 44)
         Button1.Margin = New Padding(2)
         Button1.Name = "Button1"
         Button1.Size = New Size(117, 61)
@@ -582,7 +582,7 @@ Partial Class Dashboard
         ' 
         Button24.BackColor = Color.CadetBlue
         Button24.Font = New Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Button24.Location = New Point(467, 278)
+        Button24.Location = New Point(438, 278)
         Button24.Margin = New Padding(2)
         Button24.Name = "Button24"
         Button24.Size = New Size(84, 37)
@@ -594,10 +594,10 @@ Partial Class Dashboard
         ' 
         Button23.BackColor = Color.CadetBlue
         Button23.Font = New Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Button23.Location = New Point(442, 208)
+        Button23.Location = New Point(414, 200)
         Button23.Margin = New Padding(2)
         Button23.Name = "Button23"
-        Button23.Size = New Size(136, 43)
+        Button23.Size = New Size(108, 57)
         Button23.TabIndex = 9
         Button23.Text = "Purchase"
         Button23.UseVisualStyleBackColor = False
@@ -606,10 +606,10 @@ Partial Class Dashboard
         ' 
         Button22.BackColor = Color.CadetBlue
         Button22.Font = New Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Button22.Location = New Point(301, 208)
+        Button22.Location = New Point(293, 195)
         Button22.Margin = New Padding(2)
         Button22.Name = "Button22"
-        Button22.Size = New Size(117, 43)
+        Button22.Size = New Size(94, 69)
         Button22.TabIndex = 8
         Button22.Text = "Test Drive"
         Button22.UseVisualStyleBackColor = False

@@ -564,7 +564,7 @@ Public Class Dashboard
             Dim selectedYear As String = group.Key.Year.ToString()
 
             Dim panel As New Panel()
-            panel.Size = New Size(290, 305)
+            panel.Size = New Size(290, 336)
             panel.BorderStyle = BorderStyle.FixedSingle
             panel.Margin = New Padding(10)
             panel.BackColor = Color.FromArgb(245, 230, 211)
@@ -578,14 +578,14 @@ Public Class Dashboard
             Dim lblCarName As New Label() With {
                 .Text = group.Key.CarName,
                 .Font = New Font("Segoe UI", 12, FontStyle.Bold),
-                .Location = New Point(6, 241),
+                .Location = New Point(6, 244),
                 .AutoSize = True
             }
 
             Dim lblModel As New Label() With {
                 .Text = group.Key.Model,
                 .Font = New Font("Segoe UI", 10, FontStyle.Regular),
-                .Location = New Point(6, 271),
+                .Location = New Point(6, 292),
                 .AutoSize = True
             }
 
@@ -598,8 +598,8 @@ Public Class Dashboard
 
             Dim btnView As New Button() With {
                 .Text = "View",
-                .Location = New Point(197, 261),
-                .Size = New Size(81, 37)
+                .Location = New Point(197, 282),
+                .Size = New Size(82, 37)
             }
             btnView.BackColor = Color.CadetBlue
 
@@ -613,7 +613,7 @@ Public Class Dashboard
 
             Dim cbColors As New ComboBox() With {
                 .DropDownStyle = ComboBoxStyle.DropDownList,
-                .Location = New Point(348, 47),
+                .Location = New Point(372, 47),
                 .Size = New Size(160, 25),
                 .Visible = False
             }
@@ -645,23 +645,23 @@ Public Class Dashboard
 
             Dim btnTestDrive As New Button() With {
                 .Text = "Test Drive",
-                .Location = New Point(295, 207),
-                .Size = New Size(82, 43),
+                .Location = New Point(293, 200),
+                .Size = New Size(117, 43),
                 .Visible = False
             }
             btnTestDrive.BackColor = Color.CadetBlue
 
             Dim btnPurchase As New Button() With {
                 .Text = "Purchase",
-                .Location = New Point(394, 207),
-                .Size = New Size(82, 43),
+                .Location = New Point(414, 200),
+                .Size = New Size(117, 43),
                 .Visible = False
             }
             btnPurchase.BackColor = Color.CadetBlue
 
             Dim btnClose As New Button() With {
                 .Text = "Close",
-                .Location = New Point(445, 261),
+                .Location = New Point(438, 278),
                 .Size = New Size(82, 37),
                 .Visible = False
             }
@@ -870,7 +870,7 @@ Public Class Dashboard
             Dim selectedYear As String = group.Key.Year.ToString()
 
             Dim panel As New Panel()
-            panel.Size = New Size(290, 305)
+            panel.Size = New Size(290, 336)
             panel.BorderStyle = BorderStyle.FixedSingle
             panel.Margin = New Padding(10)
             panel.BackColor = Color.FromArgb(245, 230, 211)
@@ -884,14 +884,14 @@ Public Class Dashboard
             Dim lblCarName As New Label() With {
                 .Text = group.Key.CarName,
                 .Font = New Font("Segoe UI", 12, FontStyle.Bold),
-                .Location = New Point(6, 241),
+                .Location = New Point(6, 244),
                 .AutoSize = True
             }
 
             Dim lblModel As New Label() With {
                 .Text = group.Key.Model,
                 .Font = New Font("Segoe UI", 10, FontStyle.Regular),
-                .Location = New Point(6, 271),
+                .Location = New Point(6, 292),
                 .AutoSize = True
             }
 
@@ -904,8 +904,8 @@ Public Class Dashboard
 
             Dim btnView As New Button() With {
                 .Text = "View",
-                .Location = New Point(197, 261),
-                .Size = New Size(81, 37)
+                .Location = New Point(197, 282),
+                .Size = New Size(82, 37)
             }
             btnView.BackColor = Color.CadetBlue
 
@@ -919,7 +919,7 @@ Public Class Dashboard
 
             Dim cbColors As New ComboBox() With {
                 .DropDownStyle = ComboBoxStyle.DropDownList,
-                .Location = New Point(348, 47),
+                .Location = New Point(372, 47),
                 .Size = New Size(160, 25),
                 .Visible = False
             }
@@ -951,23 +951,23 @@ Public Class Dashboard
 
             Dim btnTestDrive As New Button() With {
                 .Text = "Test Drive",
-                .Location = New Point(295, 207),
-                .Size = New Size(82, 43),
+                .Location = New Point(293, 195),
+                .Size = New Size(117, 43),
                 .Visible = False
             }
             btnTestDrive.BackColor = Color.CadetBlue
 
             Dim btnPurchase As New Button() With {
                 .Text = "Purchase",
-                .Location = New Point(394, 207),
-                .Size = New Size(82, 43),
+                .Location = New Point(414, 200),
+                .Size = New Size(117, 43),
                 .Visible = False
             }
             btnPurchase.BackColor = Color.CadetBlue
 
             Dim btnClose As New Button() With {
                 .Text = "Close",
-                .Location = New Point(445, 261),
+                .Location = New Point(438, 278),
                 .Size = New Size(82, 37),
                 .Visible = False
             }
