@@ -198,8 +198,8 @@ Public Class Dashboard
                     DataGridView1.Columns(7).Width = 110
                     DataGridView1.Columns(8).Width = 100
                 End If
-                Button5.Location = New Point(460, 490)
-                Panel5.Location = New Point(1011, 100)
+                Button5.Location = New Point(560, 490)
+                Panel5.Location = New Point(1091, 100)
             Else
                 Panel5.Visible = False
                 Button5.Visible = False
@@ -1989,7 +1989,6 @@ Public Class Dashboard
         invoiceForm.Show()
         conn.Close()
     End Sub
-
 End Class
 
 

@@ -91,7 +91,7 @@ Partial Class ProfileForm
         Label1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(79, 51)
         Label1.Name = "Label1"
-        Label1.Size = New Size(59, 17)
+        Label1.Size = New Size(75, 23)
         Label1.TabIndex = 1
         Label1.Text = "User ID :"
         ' 
@@ -101,7 +101,7 @@ Partial Class ProfileForm
         Label2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.Location = New Point(79, 111)
         Label2.Name = "Label2"
-        Label2.Size = New Size(78, 17)
+        Label2.Size = New Size(99, 23)
         Label2.TabIndex = 2
         Label2.Text = "UserName :"
         ' 
@@ -111,7 +111,7 @@ Partial Class ProfileForm
         Label3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(79, 171)
         Label3.Name = "Label3"
-        Label3.Size = New Size(47, 17)
+        Label3.Size = New Size(60, 23)
         Label3.TabIndex = 3
         Label3.Text = "Email :"
         ' 
@@ -121,7 +121,7 @@ Partial Class ProfileForm
         Label4.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label4.Location = New Point(79, 235)
         Label4.Name = "Label4"
-        Label4.Size = New Size(76, 17)
+        Label4.Size = New Size(97, 23)
         Label4.TabIndex = 4
         Label4.Text = "Full Name :"
         ' 
@@ -131,7 +131,7 @@ Partial Class ProfileForm
         Label5.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label5.Location = New Point(79, 294)
         Label5.Name = "Label5"
-        Label5.Size = New Size(76, 17)
+        Label5.Size = New Size(96, 23)
         Label5.TabIndex = 5
         Label5.Text = "Phone No :"
         ' 
@@ -140,7 +140,7 @@ Partial Class ProfileForm
         TextBox5.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox5.Location = New Point(184, 291)
         TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(138, 25)
+        TextBox5.Size = New Size(138, 29)
         TextBox5.TabIndex = 4
         ' 
         ' TextBox4
@@ -148,7 +148,7 @@ Partial Class ProfileForm
         TextBox4.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox4.Location = New Point(184, 231)
         TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(138, 25)
+        TextBox4.Size = New Size(138, 29)
         TextBox4.TabIndex = 3
         ' 
         ' TextBox3
@@ -156,7 +156,7 @@ Partial Class ProfileForm
         TextBox3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox3.Location = New Point(184, 168)
         TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(138, 25)
+        TextBox3.Size = New Size(138, 29)
         TextBox3.TabIndex = 2
         ' 
         ' TextBox2
@@ -166,7 +166,7 @@ Partial Class ProfileForm
         TextBox2.Location = New Point(184, 108)
         TextBox2.Name = "TextBox2"
         TextBox2.ReadOnly = True
-        TextBox2.Size = New Size(138, 25)
+        TextBox2.Size = New Size(138, 29)
         TextBox2.TabIndex = 1
         ' 
         ' TextBox1
@@ -176,7 +176,7 @@ Partial Class ProfileForm
         TextBox1.Location = New Point(184, 48)
         TextBox1.Name = "TextBox1"
         TextBox1.ReadOnly = True
-        TextBox1.Size = New Size(114, 25)
+        TextBox1.Size = New Size(114, 29)
         TextBox1.TabIndex = 0
         ' 
         ' DataGridView1
@@ -186,6 +186,7 @@ Partial Class ProfileForm
         DataGridView1.Location = New Point(500, 82)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
+        DataGridView1.RowHeadersWidth = 51
         DataGridView1.Size = New Size(469, 257)
         DataGridView1.TabIndex = 1
         ' 
@@ -216,9 +217,9 @@ Partial Class ProfileForm
         Button5.Font = New Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button5.Image = CType(resources.GetObject("Button5.Image"), Image)
         Button5.ImageAlign = ContentAlignment.MiddleLeft
-        Button5.Location = New Point(862, 18)
+        Button5.Location = New Point(838, 18)
         Button5.Name = "Button5"
-        Button5.Size = New Size(107, 47)
+        Button5.Size = New Size(131, 47)
         Button5.TabIndex = 4
         Button5.Text = "Log Out"
         Button5.TextAlign = ContentAlignment.MiddleRight
@@ -226,7 +227,7 @@ Partial Class ProfileForm
         ' 
         ' ProfileForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 17F)
+        AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.CadetBlue
         ClientSize = New Size(1005, 512)
